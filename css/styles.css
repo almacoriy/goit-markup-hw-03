@@ -1,10 +1,23 @@
 :root {
 --main-text-color: #757575;
 --secondary-text-color: #212121;
---accent-link-color: #2196F3;
---main-bg-color: #FFFFFF;
---secondary-bg-color: #F5F4FA;
---hero-footer-bg-color: #2F303A;
+--accent-link-color: #2196f3;
+--main-bg-color: #ffffff;
+--secondary-bg-color: #f5f4fa;
+--hero-footer-bg-color: #2f303a;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0 auto;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 body {
@@ -13,20 +26,11 @@ body {
     background-color: var(--main-bg-color);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-p {
-    margin: 0;
-    padding: 0;
-}
+/* h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0 auto;
+    padding-left: 0px;
+    padding-right: 0px;
+} */
 
 .list {
     list-style: none;
@@ -37,7 +41,7 @@ p {
 }
 
 .container {
-    width: 1200px;
+    width: 1170px;
     margin: 0 auto;
     padding: 0 15px;
 
@@ -94,15 +98,17 @@ p {
 
 /* -------Hero------- */
 .hero {
-    margin-bottom: 94px;
     background: var(--hero-footer-bg-color)
 }
 
+.hero > .container {
+    height: 600px;
+}
+
 .hero-title {
-    margin: 0 auto;
-    margin-bottom: 30px;
     width: 696px;
-    height: 120px;
+    padding-top: 200px;
+    padding-bottom: 30px;
 
     font-weight: 900;
     font-size: 44px;
@@ -115,8 +121,10 @@ p {
 }
  
 .hero-button {
-    width: 136px;
-    height: 30px;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
 
     font-weight: 700;
     font-size: 16px;
@@ -138,11 +146,17 @@ p {
 
 /* -------Features------- */ 
 .features {
-    margin-bottom: 94px;
+    padding-top: 94px;
+    padding-bottom: 47px;
+    
 }
 
 .features-main-title {
     display: none;
+}
+
+.features-item {
+    width: 270px;
 }
 
 .features-title {
@@ -156,6 +170,7 @@ p {
 }
 
 .features-item-text {
+    padding-top: 10px;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -163,11 +178,15 @@ p {
 
 /* -------Works------- */
 .works {
-    margin-bottom: 94px;
+    padding-top: 47px;
+    padding-bottom: 47px;
 }
 
 .works-title {
-        font-weight: 700;
+    width: 376px;
+    padding-bottom: 50px;
+
+    font-weight: 700;
     font-size: 36px;
     line-height: 1.67;
     text-align: center;
@@ -176,12 +195,32 @@ p {
     color: var(--secondary-text-color);
 }
 
+.works-item {
+    width: 370px;
+}
+
 /* -------Team------- */
 .team {
+    padding-top: 47px;
     background-color: var(--secondary-bg-color);
 }
 
+.team-list {
+    padding-bottom: 50px;
+}
+
+.team-item {
+    width: 270px;
+}
+
+.team-image {
+    padding-bottom: 30px;
+}
+
 .team-title {
+    width: 264px;
+    padding-bottom: 50px;
+
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -191,6 +230,8 @@ p {
 }
 
 .team-item-title {
+    padding-bottom: 10px;
+
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
@@ -200,6 +241,8 @@ p {
 }
 
 .team-item-text {
+    padding-bottom: 30px;
+
     font-size: 16px;
     line-height: 1.19;
     letter-spacing: 0.03em;

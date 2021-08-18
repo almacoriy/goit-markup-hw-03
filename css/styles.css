@@ -5,8 +5,11 @@
 --main-bg-color: #ffffff;
 --secondary-bg-color: #f5f4fa;
 --hero-footer-bg-color: #2f303a;
+
+--card-set-gap: 30px;
 }
 
+/* -------Ресет стилей------- */
 html {
     box-sizing: border-box;
 }
@@ -16,8 +19,8 @@ html {
 *::after {
   box-sizing: inherit;
   margin: 0 auto;
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 body {
@@ -40,19 +43,30 @@ body {
     text-decoration: none;
 }
 
+/* -------Скрываем заголовок секции------- */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* -------Контейнер для секций------- */
 .container {
-    width: 1170px;
+    width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 
     outline: 2px solid red;
 }
 
-.header-link.active-page {
-    color: var(--accent-link-color);
-}
-
-/* -------Header------- */
+/* -------Шапка------- */
 .header {
     border-bottom: 1px solid #ECECEC;
 }
@@ -81,6 +95,10 @@ body {
     color: #212121;
 }
 
+.header-link.active-page {
+    color: var(--accent-link-color);
+}
+
 .header-link:hover,
 .header-link:focus {
     color: var(--accent-link-color);
@@ -96,7 +114,7 @@ body {
     color: var(--accent-link-color);
 }
 
-/* -------Hero------- */
+/* -------Герой------- */
 .hero {
     background: var(--hero-footer-bg-color)
 }
@@ -144,15 +162,24 @@ body {
     background-color: #188CE8;
 }
 
-/* -------Features------- */ 
+/* -------Особенности------- */ 
 .features {
     padding-top: 94px;
     padding-bottom: 47px;
     
 }
 
-.features-main-title {
-    display: none;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .features-item {
@@ -176,7 +203,7 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* -------Works------- */
+/* -------Чем мы занимаемся------- */
 .works {
     padding-top: 47px;
     padding-bottom: 47px;
@@ -199,7 +226,7 @@ body {
     width: 370px;
 }
 
-/* -------Team------- */
+/* -------Наша команда------- */
 .team {
     padding-top: 47px;
     background-color: var(--secondary-bg-color);
@@ -248,7 +275,7 @@ body {
     letter-spacing: 0.03em;
 }
 
-/* -------Footer------- */
+/* -------Футер------- */
 .footer {
     background-color: var(--hero-footer-bg-color);
 }
@@ -291,30 +318,31 @@ body {
     color: var(--accent-link-color);
 }
 
-/* -------Portfolio------- */
+/* -------Портфолио------- */
 .portfolio {
     margin-bottom: 94px;
 }
 
-.portfolio-main-title {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-}
-
 .portfolio-list {
-    margin-bottom: 34px;
+    display: flex;
+    justify-content: center;
+    padding-top: 94px;
+    padding-bottom: 50px;
 }
 
-/* -------Navigation by sections Portfolio------- */
+.portfolio-item {
+    margin: 0;
+
+}
+
+.portfolio-item:not(:last-child) {
+    margin-right: 8px;
+}
+
+/* -------Навигация для секции Портфолио------- */
 .portfolio-button {
+    padding: 6px 22px;
+
     font-weight: 500;
     font-size: 16px;
     line-height: 1.62;
@@ -334,8 +362,8 @@ body {
     color: #ffffff;
 }
 
-/* -------Portfolio Work examples------- */
-.examples-title {
+/* -------Портфолио Примеры работ------- */
+.card-set-title {
     font-weight: 700;
     font-size: 18px;
     line-height: 2.0;
@@ -344,10 +372,26 @@ body {
     color: var(--secondary-text-color);
 }
 
-.examples-text {
+.card-set-text {
     font-size: 16px;
     line-height: 1.87;
     letter-spacing: 0.03em;
 
     color: var(--main-text-color);
 }
+
+/* -------Сетка для карточек Портфолио------- */
+.card-set {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: calc( -1 * var(--card-set-gap));
+    margin-left: calc( -1 * var(--card-set-gap));
+}
+
+.card-set > .card-set-item {
+    flex-basis: calc(100% / 3 - var(--card-set-gap));
+
+    margin-top: var(--card-set-gap);
+    margin-left: var(--card-set-gap);
+} 

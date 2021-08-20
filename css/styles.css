@@ -116,7 +116,7 @@ img {
     color: var(--accent-link-color);
 }
 
-/* !-------Герой------- */
+/* -------Герой------- */
 .hero {
     background: var(--hero-footer-bg-color);
 }
@@ -173,30 +173,35 @@ img {
 }
 
 /* -------Особенности------- */ 
-.features {
+.features {  
     padding-top: 94px;
-    padding-bottom: 47px;
+    padding-bottom: 94px;
     
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+.container > .features-list {
+    display: flex;
+    flex-direction: row;
+}
+
+.features-list {
+    align-items: center;
 }
 
 .features-item {
-    width: 270px;
+    /* width: 270px; */
+
+    margin-left: 0;
+    margin-right: 0;
 }
 
+.features-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+
 .features-title {
+    margin-bottom: 10px;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -207,7 +212,6 @@ img {
 }
 
 .features-item-text {
-    padding-top: 10px;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
@@ -329,9 +333,9 @@ img {
 }
 
 /* -------Портфолио------- */
-.section {
+.portfolio {
     margin-top: 94px;
-    margin-bottom: 94px;
+    margin-bottom: calc(94px + var(--card-set-gap));
 }
 
 /* -------Навигация для секции Портфолио------- */
@@ -409,7 +413,7 @@ img {
 }
 
 .card-set-content {
-    margin: 20px 24px;
+    padding: 20px 24px;
     border: 1px solid #eeeeee;
     border-top: unset;
 }

@@ -29,12 +29,20 @@ body {
     background-color: var(--main-bg-color);
 }
 
+/* -------Снимаем стили списков------ */
 .list {
     list-style: none;
 }
 
+/* -------Снимаем стили ссылок------ */
 .link {
     text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /* -------Скрываем заголовок секции------- */
@@ -321,14 +329,15 @@ body {
 }
 
 /* -------Портфолио------- */
-.portfolio {
+.section {
+    margin-top: 94px;
     margin-bottom: 94px;
 }
 
+/* -------Навигация для секции Портфолио------- */
 .portfolio-list {
     display: flex;
     justify-content: center;
-    padding-top: 94px;
     padding-bottom: 50px;
 }
 
@@ -341,7 +350,6 @@ body {
     margin-right: 8px;
 }
 
-/* -------Навигация для секции Портфолио------- */
 .portfolio-button {
     padding: 6px 22px;
 
@@ -372,6 +380,8 @@ body {
     letter-spacing: 0.06em;
 
     color: var(--secondary-text-color);
+
+    margin-bottom: 4px;
 }
 
 .card-set-text {
@@ -387,17 +397,19 @@ body {
     display: flex;
     flex-wrap: wrap;
 
-    margin-top: calc( -1 * var(--card-set-gap));
-    margin-left: calc( -1 * var(--card-set-gap));
+    margin-right: calc( -1 * var(--card-set-gap));
+    margin-bottom: calc( -1 * var(--card-set-gap));
 }
 
 .card-set > .card-set-item {
     flex-basis: calc(100% / 3 - var(--card-set-gap));
 
-    margin-top: var(--card-set-gap);
-    margin-left: var(--card-set-gap);
+    margin-right: var(--card-set-gap);
+    margin-bottom: var(--card-set-gap);
 }
 
 .card-set-content {
-    padding: 20px 24px;
+    margin: 20px 24px;
+    border: 1px solid #eeeeee;
+    border-top: unset;
 }

@@ -6,6 +6,7 @@
     --secondary-bg-color: #f5f4fa;
     --hero-footer-bg-color: #2f303a;
 
+    --section-padding: 94px;
     --card-set-gap: 30px;
 }
 
@@ -65,8 +66,8 @@ img {
 
 /* -------Паддинги для секций------- */
 .section {
-    padding-top: 47px;
-    padding-bottom: 47px;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
 }
 
 /* -------Шапка------- */
@@ -163,9 +164,14 @@ img {
     background: var(--hero-footer-bg-color);
 }
 
+.hero > .container {
+    padding-top: calc(200px - var(--section-padding));
+    padding-bottom: calc(200px - var(--section-padding));
+}
+
 .hero-title {
-    display: block;
-    padding: 200px 235px 30px;
+    margin-bottom: 30px;
+    width: 696px;
 
     font-weight: 900;
     font-size: 44px;
@@ -176,9 +182,9 @@ img {
 }
 
 .hero-button {
-    display: block;
     margin: 0 auto;
     min-width: 200px;
+    height: 50px;
 
     font-weight: 700;
     font-size: 16px;
@@ -197,13 +203,9 @@ img {
     background-color: #188ce8;
 }
 
-.hero > .container {
-    padding-bottom: 200px;
-}
-
 /* -------Особенности------- */
 .features {
-    padding-top: 94px;
+    padding-bottom: 0;
 }
 
 .features-list {
@@ -269,12 +271,6 @@ img {
 /* -------Наша команда------- */
 .team {
     background-color: var(--secondary-bg-color);
-    padding-bottom: 0;
-}
-
-.team > .container {
-    padding-top: 94px;
-    padding-bottom: 94px;
 }
 
 .container > .team-list {
@@ -372,7 +368,6 @@ img {
     color: var(--accent-link-color);
 }
 
-/* -------Портфолио------- */
 .portfolio {
     margin-top: 94px;
     margin-bottom: calc(94px + var(--card-set-gap));

@@ -368,16 +368,11 @@ img {
     color: var(--accent-link-color);
 }
 
-.portfolio {
-    margin-top: 94px;
-    margin-bottom: calc(94px + var(--card-set-gap));
-}
-
 /* -------Навигация для секции Портфолио------- */
 .portfolio-list {
     display: flex;
     justify-content: center;
-    padding-bottom: 50px;
+    margin-bottom: 34px;
 }
 
 .portfolio-item {

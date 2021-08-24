@@ -255,7 +255,6 @@ img {
 
 .works-list {
     display: flex;
-    flex-direction: row;
 }
 
 .works-item {
@@ -273,9 +272,8 @@ img {
     background-color: var(--secondary-bg-color);
 }
 
-.container > .team-list {
+.team-list {
     display: flex;
-    flex-direction: row;
 }
 
 .team-title {
